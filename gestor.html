@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Adicionar Tarefa</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        input[type="text"],
+        textarea,
+        input[type="date"],
+        select {
+            width: 100%;
+            margin-bottom: 10px;
+            padding: 8px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        select {
+            height: 40px;
+        }
+
+        button[type="submit"] {
+            padding: 10px;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #2980b9;
+        }
+
+        label {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="adicionar_tarefa.php" method="post">
+        <label for="title">Título:</label>
+        <input type="text" name="title" placeholder="Título" required>
+
+        <label for="description">Descrição:</label>
+        <textarea name="description" placeholder="Descrição"></textarea>
+
+        <label for="due_date">Data de Entrega:</label>
+        <input type="date" name="due_date">
+
+        <label for="status">Status:</label>
+        <select name="status">
+            <option value="pendente">Pendente</option>
+            <option value="em_andamento">Em Andamento</option>
+            <option value="concluída">Concluída</option>
+        </select>
+
+        <label for="category">Categoria:</label>
+        <select name="category" id="category">
+            <option value="trabalho">Trabalho</option>
+            <option value="pessoal">Pessoal</option>
+            <option value="estudos">Estudos</option>
+        </select>
+
+        <label for="priority">Prioridade:</label>
+        <select name="priority" id="priority">
+            <option value="1">Baixa</option>
+            <option value="2">Média</option>
+            <option value="3">Alta</option>
+        </select>
+
+        <button type="submit">Adicionar Tarefa</button>
+    </form>
+</body>
+
+</html>
